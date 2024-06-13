@@ -159,7 +159,7 @@ Widget BotonRegresar(BuildContext context) {
       foregroundColor: Color.fromARGB(255, 0, 0, 0),
     ),
     onPressed: () {
-      Navigator.pop(context);
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Prueba2()));
     },
     child: Text(
       "Regresar",
