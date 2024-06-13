@@ -64,11 +64,11 @@ final TextEditingController _correo = TextEditingController();
 Widget CampoCorreo() {
   return Container(
     padding: EdgeInsets.all(20),
-    child: (TextField(
+    child: TextField(
       controller: _correo,
       decoration: InputDecoration(hintText: "Ingresa tu usuario o e-mail"),
       keyboardType: TextInputType.emailAddress,
-    )),
+    ),
   );
 }
 
@@ -76,72 +76,73 @@ final TextEditingController _contrasenia = TextEditingController();
 Widget CampoClave() {
   return Container(
     padding: EdgeInsets.all(20),
-    child: (TextField(
+    child: TextField(
       controller: _contrasenia,
-      decoration: InputDecoration(hintText: "Ingresa tu contraseña"),
-    )),
+      decoration: InputDecoration(hintText: "Ingresa tu contraseña"),
+      obscureText: true,
+    ),
   );
 }
 
-Widget BotonInicio(context) {
-  return (FilledButton(
-      style: FilledButton.styleFrom(
-        backgroundColor: Color.fromARGB(255, 226, 145, 206),
-        foregroundColor: Color.fromARGB(255, 0, 0, 0),
-        shape: const StadiumBorder(
-          side: BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2.0),
-        ),
+Widget BotonInicio(BuildContext context) {
+  return ElevatedButton(
+    style: ElevatedButton.styleFrom(
+      backgroundColor: Color.fromARGB(255, 226, 145, 206),
+      foregroundColor: Color.fromARGB(255, 0, 0, 0),
+      shape: const StadiumBorder(
+        side: BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2.0),
       ),
-      onPressed: () {
-        login(context);
-      },
-      child: Text("Ingresar")));
+    ),
+    onPressed: () {
+      login(context);
+    },
+    child: Text("Ingresar"),
+  );
 }
 
-Future<void> login(context) async {
+Future<void> login(BuildContext context) async {
   try {
     final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: _correo.text, password: _contrasenia.text);
-    ////////////////////
+      email: _correo.text,
+      password: _contrasenia.text,
+    );
     Navigator.push(context, MaterialPageRoute(builder: (context) => Cuenta()));
-    ///////////////////
   } on FirebaseAuthException catch (e) {
-    if (e.code == 'user-not-found') {
-      print('No user found for that email.');
-    } else if (e.code == 'wrong-password') {
-      print('Wrong password provided for that user.');
+    if (e.code == 'user-not-found' || e.code == 'wrong-password') {
+      alertaFalla(context);
+    } else {
+      print('Error: ${e.code}');
     }
   }
 }
 
-void alertaFalla(context) {
+void alertaFalla(BuildContext context) {
   showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text("ATENCION"),
-          content: Text("El correo o la contraseña son incorrectos"),
-          actions: [
-            TextButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: Text("Cerrar"))
-          ],
-        );
-      });
+    context: context,
+    builder: (context) {
+      return AlertDialog(
+        title: Text("ATENCIÓN"),
+        content: Text("El correo o la contraseña son incorrectos"),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text("Cerrar"),
+          ),
+        ],
+      );
+    },
+  );
 }
 
-Widget BotonRegistro(context) {
+Widget BotonRegistro(BuildContext context) {
   return TextButton(
     style: TextButton.styleFrom(
       foregroundColor: Color.fromARGB(255, 0, 0, 0),
     ),
     onPressed: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => Registro()),
-      );
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Registro()));
     },
     child: Text(
       "¿No tienes una cuenta? Regístrate",
@@ -152,16 +153,13 @@ Widget BotonRegistro(context) {
   );
 }
 
-Widget BotonRegresar(context) {
+Widget BotonRegresar(BuildContext context) {
   return TextButton(
     style: TextButton.styleFrom(
       foregroundColor: Color.fromARGB(255, 0, 0, 0),
     ),
     onPressed: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => Prueba2()),
-      );
+      Navigator.pop(context);
     },
     child: Text(
       "Regresar",

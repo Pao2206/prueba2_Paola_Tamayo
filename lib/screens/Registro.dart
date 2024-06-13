@@ -48,10 +48,10 @@ Widget Cuerpo(context) {
     child: (Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
+        BotonRegresar(context),
         CampoNickname(),
         CampoCorreo(),
         CampoClave(),
-        
         BotonRegistro(context),
       ],
     )),
@@ -149,4 +149,25 @@ await ref.set({
   "id": _nickname.text,
   "correo": _correo.text,
 });
+}
+
+Widget BotonRegresar(context) {
+  return TextButton(
+    style: TextButton.styleFrom(
+      backgroundColor: Color.fromARGB(255, 204, 215, 231),
+      foregroundColor: Color.fromARGB(255, 0, 0, 0),
+    ),
+    onPressed: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Login()),
+      );
+    },
+    child: Text(
+      "Regresar",
+      style: TextStyle(
+        fontSize: 17,
+      ),
+    ),
+  );
 }
