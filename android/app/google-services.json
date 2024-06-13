@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "1092083745694",
+    "firebase_url": "https://app-mov2-api-41b79-default-rtdb.firebaseio.com",
+    "project_id": "app-mov2-api-41b79",
+    "storage_bucket": "app-mov2-api-41b79.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092083745694:android:908b78b2772865b7664c8f",
+        "android_client_info": {
+          "package_name": "com.app.firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1tekRY6mauNxu4PNZVQghxE08A6UL8is"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092083745694:android:1c0757b681f34faa664c8f",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1tekRY6mauNxu4PNZVQghxE08A6UL8is"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092083745694:android:a0c3bc9950ca94fa664c8f",
+        "android_client_info": {
+          "package_name": "com.example.app_06"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1tekRY6mauNxu4PNZVQghxE08A6UL8is"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092083745694:android:d98537afcedea579664c8f",
+        "android_client_info": {
+          "package_name": "com.example.prueba2_paola_tamayo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1tekRY6mauNxu4PNZVQghxE08A6UL8is"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092083745694:android:cd9074040525d0a6664c8f",
+        "android_client_info": {
+          "package_name": "com.fire.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1tekRY6mauNxu4PNZVQghxE08A6UL8is"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
